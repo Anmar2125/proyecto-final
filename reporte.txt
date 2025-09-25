@@ -37,4 +37,3 @@ Reporte Proyecto Final - Kubernetes + Docker
 - Comando: kubectl port-forward service/proyecto-final-service 8080:5000
 - Acceso desde el navegador: http://localhost:8080/
 
-Captura de la aplicación funcionando: (pega aquí la imagen)
