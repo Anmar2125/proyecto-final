@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: proyecto-final-service
+  labels:
+    app: proyecto-final
+spec:
+  selector:
+    app: proyecto-final
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 5000       # Puerto dentro del cluster
+      targetPort: 5000 # Puerto del contenedor
+      nodePort: 30001  # Puerto expuesto en tu máquina (puede ser entre 30000–32767)

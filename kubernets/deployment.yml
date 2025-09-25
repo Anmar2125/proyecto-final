@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proyecto-final-deployment
+  labels:
+    app: proyecto-final
+spec:
+  replicas: 2  # puedes ajustar el número de réplicas
+  selector:
+    matchLabels:
+      app: proyecto-final
+  template:
+    metadata:
+      labels:
+        app: proyecto-final
+    spec:
+      containers:
+      - name: proyecto-final-container
+        image: marq2530/proyecto-final:1.0
+        ports:
+        - containerPort: 5000

@@ -1,0 +1,40 @@
+Reporte Proyecto Final - Kubernetes + Docker
+
+1. Integrantes
+- Mario Pérez  
+- Han Ruiz
+- Angello Romero
+
+2. Imagen en Docker Hub
+- URL: https://hub.docker.com/r/marq2530/proyecto-final
+- Versión utilizada: 1.0
+
+3. Kubernetes
+
+    3.1 Pods
+    - Nombres de los pods: proyecto-final-deployment-5f8586d794-r5r8l, proyecto-final-deployment-5f8586d794-r6c7r
+    - Estado: Running
+    - Ready: 1/1
+    - Comando usado para verificar: kubectl get pods
+
+    3.2 Deployment
+    - Nombre del deployment: proyecto-final-deployment
+    - Réplicas: 2
+    - Imagen utilizada: marq2530/proyecto-final:1.0
+    - Estado: AVAILABLE (2/2)
+    - Comando usado para verificar: kubectl get deployment
+
+    3.3 Service
+    - Nombre del servicio: proyecto-final-service
+    - Tipo: NodePort
+    - Puerto interno (containerPort): 5000
+    - Puerto expuesto en la máquina local (NodePort): 30001
+    - Comando usado para verificar: kubectl get service
+    
+
+4. Acceso a la aplicación
+
+- Comando: kubectl port-forward service/proyecto-final-service 8080:5000
+- Acceso desde el navegador: http://localhost:8080/
+
+Captura de la aplicación funcionando: (pega aquí la imagen)

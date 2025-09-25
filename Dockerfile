@@ -8,18 +8,18 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Crear directorio de trabajo
+# Directorio de trabajo
 WORKDIR /app
 
-# Copiar requirements e instalar dependencias Python
-COPY requerimientos.txt .
+# Copiar dependencias e instalarlas
+COPY src/requerimientos.txt .
 RUN pip install --no-cache-dir -r requerimientos.txt
 
-# Copiar código de la aplicación
-COPY src/ .
+# Copiar aplicación
+COPY src/ ./src/
 
-# Exponer puerto (ajustar según tu app)
+# Exponer puerto
 EXPOSE 5000
 
 # Comando de inicio
-CMD ["python", "app.py"]
+CMD ["python", "src/app.py"]
