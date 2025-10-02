@@ -3,7 +3,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from app import Microgrid
 
-
 def test_initial_state():
     """El sistema debe iniciar con valores esperados"""
     grid = Microgrid()
@@ -35,3 +34,5 @@ def test_controlador_charging():
     soc_before = grid.battery_soc
     grid.simulate_hour(12)  # Fuerza simulación en el día
     assert grid.battery_soc >= soc_before
+
+

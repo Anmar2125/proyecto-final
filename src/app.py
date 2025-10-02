@@ -5,7 +5,7 @@ class Microgrid:
         self.battery_soc = 75.0  # Nivel de batería (%)
         self.solar_power = 0.0   # Generación solar (kW)
         self.load_power = 2.5    # Demanda de carga (kW)
-        self.plc_status = "RUNNING"
+        self.controlador_status = "RUNNING"
 
     def simulate_hour(self, hour):
         """Simular la operación en una hora del día"""
